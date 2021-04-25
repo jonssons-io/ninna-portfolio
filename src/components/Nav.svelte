@@ -3,32 +3,82 @@
 	let open = false;
 </script>
 
-
 <nav class="header">
 	<div class="header-desktop">
-		<a aria-current="{segment === undefined ? 'page' : undefined}" href="." class="header-desktop__navlink">hem</a>
-		<a rel=prefetch aria-current="{segment === 'portfolio' ? 'page' : undefined}" href="portfolio" class="header-desktop__navlink">portfolio</a>
-		<div class="header__logo"><h1 class="header__logo-title">Glim</h1><h5 class="header__logo-subtitle">Fotografi</h5></div>
-		<a aria-current="{segment === 'about' ? 'page' : undefined}" href="about" class="header-desktop__navlink">om</a>
-		<a aria-current="{segment === 'contact' ? 'page' : undefined}" href="contact" class="header-desktop__navlink">kontakt</a>
+		<a
+			aria-current={segment === undefined ? 'page' : undefined}
+			href="."
+			class="header-desktop__navlink">hem</a
+		>
+		<a
+			rel="prefetch"
+			aria-current={segment === 'portfolio' ? 'page' : undefined}
+			href="portfolio"
+			class="header-desktop__navlink">portfolio</a
+		>
+		<div class="header__logo">
+			<h1 class="header__logo-title">Glim</h1>
+			<h5 class="header__logo-subtitle">Fotografi</h5>
+		</div>
+		<a
+			aria-current={segment === 'about' ? 'page' : undefined}
+			href="about"
+			class="header-desktop__navlink">om</a
+		>
+		<a
+			aria-current={segment === 'contact' ? 'page' : undefined}
+			href="contact"
+			class="header-desktop__navlink">kontakt</a
+		>
 	</div>
 	<div class="header-mobile">
-		<div class="header-mobile__hamburger" on:click="{() => open = !open}">
-			<div class="hamburger-line line-top" class:open="{open === true}"></div>
-			<div class="hamburger-line line-middle" class:open="{open === true}"></div>
-			<div class="hamburger-line line-bottom" class:open="{open === true}"></div>
+		<div class="header-mobile__hamburger" on:click={() => (open = !open)}>
+			<div class="hamburger-line line-top" class:open={open === true} />
+			<div
+				class="hamburger-line line-middle"
+				class:open={open === true}
+			/>
+			<div
+				class="hamburger-line line-bottom"
+				class:open={open === true}
+			/>
 		</div>
-		<div class="header-mobile__drawer" class:open="{open === true}">
-			<a aria-current="{segment === undefined ? 'page' : undefined}" href="." class="header-mobile__navlink" on:click="{() => open = !open}">hem</a>
-			<a rel=prefetch aria-current="{segment === 'portfolio' ? 'page' : undefined}" href="portfolio" class="header-mobile__navlink" on:click="{() => open = !open}">portfolio</a>
-			<a aria-current="{segment === 'about' ? 'page' : undefined}" href="about" class="header-mobile__navlink" on:click="{() => open = !open}">om</a>
-			<a aria-current="{segment === 'contact' ? 'page' : undefined}" href="contact" class="header-mobile__navlink" on:click="{() => open = !open}">kontakt</a>
+		<div class="header-mobile__drawer" class:open={open === true}>
+			<a
+				aria-current={segment === undefined ? 'page' : undefined}
+				href="."
+				class="header-mobile__navlink"
+				on:click={() => (open = !open)}>hem</a
+			>
+			<a
+				rel="prefetch"
+				aria-current={segment === 'portfolio' ? 'page' : undefined}
+				href="portfolio"
+				class="header-mobile__navlink"
+				on:click={() => (open = !open)}>portfolio</a
+			>
+			<a
+				aria-current={segment === 'about' ? 'page' : undefined}
+				href="about"
+				class="header-mobile__navlink"
+				on:click={() => (open = !open)}>om</a
+			>
+			<a
+				aria-current={segment === 'contact' ? 'page' : undefined}
+				href="contact"
+				class="header-mobile__navlink"
+				on:click={() => (open = !open)}>kontakt</a
+			>
 		</div>
 	</div>
 </nav>
 
 <style>
 	/* Mobile styles for header and drawer */
+	nav {
+		position: sticky;
+		z-index: 10;
+	}
 	.header-mobile {
 		display: block;
 	}
@@ -130,13 +180,12 @@
 		font-family: 'Thasadith', sans-serif;
 		text-transform: uppercase;
 		font-size: 1.2rem;
-		letter-spacing: .1em;
+		letter-spacing: 0.1em;
 		font-weight: 700;
 	}
 
-
 	/* Media queries for navbar */
-	@media screen and (min-width: 600px){	
+	@media screen and (min-width: 600px) {
 		.header-mobile {
 			display: none;
 		}

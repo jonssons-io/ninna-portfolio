@@ -1,7 +1,7 @@
-/*  
-    font-family: 'Thasadith', sans-serif; 400, 700 font-family: 
+/* 
+    font-family: 'Thasadith', sans-serif; 400, 700 font-family:
     font-family: 'Oranienbaum', serif; 400
-    font-family: 'Exo', sans-serif; 300, 300i, 400, 500, 500i, 700, 800 
+    font-family: 'Exo', sans-serif; 300, 300i, 400, 500, 500i, 700, 800
 */
 @import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;0,400;0,500;0,700;0,800;1,300;1,500&family=Oranienbaum&family=Thasadith:wght@400;700&display=swap");
 html,
@@ -447,3 +447,11 @@ textarea {
   padding: 0.2em 0;
 }
 
+p, a, button, span {
+  font-family: 'Exo', sans-serif;
+  color: #222;
+}
+
+a:visited {
+  color: #222;
+}
